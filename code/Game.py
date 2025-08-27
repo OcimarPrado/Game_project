@@ -1,4 +1,6 @@
 import pygame
+
+from Constantes import WIN_WIDTH, WIN_HEIGTH
 from code.Menu import Menu
 
 
@@ -8,18 +10,14 @@ from code.Menu import Menu
 class Game:
     def __init__(self):
         print('starting pygame')
-        game = pygame.init()
-        self.window = pygame.display.set_mode(size=(1000, 600))  # Configuração da SCREEN
+        pygame.init()
+        self.window = pygame.display.set_mode(size=(WIN_WIDTH, WIN_HEIGTH))  # Configuração da SCREEN
 
 
     def run(self):
         menu = Menu(self.window)
         menu.run()
+        pass
 
-        while True:
-            # Ajustando eventos da Screen
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    print('Quitting')
-                    pygame.quit()  # Fecha janela
-                    quit()  # finaliza pygame
+
+
