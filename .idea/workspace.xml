@@ -4,12 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1da4f11-d9b8-4caf-8621-48ec08a37eba" name="Changes" comment="Atualização de sprites para o game">
-      <change afterPath="$PROJECT_DIR$/Constantes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/menuBG.png" afterDir="false" />
+    <list default="true" id="d1da4f11-d9b8-4caf-8621-48ec08a37eba" name="Changes" comment="Ajustando e conectando classes de Menu e Game">
+      <change afterPath="$PROJECT_DIR$/assets/menu.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/player1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/tela1BG0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/tela1BG1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/tela1BG2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/tela1BG3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/tela2BG0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/tela2BG1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/tela2BG2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/tela2BG3.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/Game.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/Game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/Menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/Menu.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,52 +41,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Python.Constantes.executor": "Run",
-    "Python.Game.executor": "Run",
-    "Python.Menu.executor": "Run",
-    "Python.game.executor": "Run",
-    "Python.main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Python.game.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\User\PycharmProjects\Game_Project\assets" />
       <recent name="C:\Users\User\PycharmProjects\Game_Project\code" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Game_Project" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.main" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -146,33 +120,13 @@
       <option name="project" value="LOCAL" />
       <updated>1756303181382</updated>
     </task>
-    <task id="LOCAL-00007" summary="Atualização de sprites para o game">
-      <option name="closed" value="true" />
-      <created>1756331687102</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1756331687102</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Commit inicial..." />
     <MESSAGE value="Aicionando classes geradas pelo starUML" />
     <MESSAGE value="Ajustando e conectando classes de Menu e Game" />
-    <MESSAGE value="Atualização de sprites para o game" />
-    <option name="LAST_COMMIT_MESSAGE" value="Atualização de sprites para o game" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Constantes.py</url>
-          <line>11</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <option name="LAST_COMMIT_MESSAGE" value="Ajustando e conectando classes de Menu e Game" />
   </component>
 </project>
