@@ -28,3 +28,22 @@ ENTITY_SPEED = {
 
 # Velocidade dos players
 PLAYER_SPEED = 5
+
+# Controles do Player
+PLAYER_CONTROLS = {
+    'up': pygame.K_UP,
+    'down': pygame.K_DOWN,
+    'left': pygame.K_LEFT,
+    'right': pygame.K_RIGHT,
+    'shoot': pygame.K_SPACE  # barra de espaço para atirar
+}
+
+# Controles do Menu
+MENU_CONTROLS = {
+    'up': pygame.K_UP,
+    'down': pygame.K_DOWN,
+    'select': pygame.K_RETURN,
+    'exit': pygame.K_ESCAPE
+}
+
+

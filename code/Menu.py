@@ -1,5 +1,6 @@
 import pygame
-from Constantes import WIN_WIDTH, COLOR_BLUE, MENU_OPTION, COLOR_R, COLOR_Y
+from Constantes import WIN_WIDTH, COLOR_BLUE, MENU_OPTION, COLOR_R, COLOR_Y, MENU_CONTROLS
+
 
 class Menu:
     def __init__(self, window):
@@ -22,15 +23,29 @@ class Menu:
             pygame.display.flip()
 
             for event in pygame.event.get():
+                for event in pygame.event.get():
+                    if event.type == pygame.QUIT:
+                        pygame.quit()
+                        quit()
+                    if event.type == pygame.KEYDOWN:
+                        if event.key == MENU_CONTROLS['down']:
+                            menu_option = (menu_option + 1) % len(MENU_OPTION)
+                        elif event.key == MENU_CONTROLS['up']:
+                            menu_option = (menu_option - 1) % len(MENU_OPTION)
+                        elif event.key == MENU_CONTROLS['select']:
+                            pygame.event.clear()  # limpa eventos pendentes
+                            return MENU_OPTION[menu_option]
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     quit()
+
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_DOWN:
                         menu_option = (menu_option + 1) % len(MENU_OPTION)
                     if event.key == pygame.K_UP:
                         menu_option = (menu_option - 1) % len(MENU_OPTION)
                     if event.key == pygame.K_RETURN:
+                        pygame.event.clear()  # limpa todos os eventos pendentes
                         return MENU_OPTION[menu_option]
 
     def menu_text(self, text_size: int, text: str, text_color: tuple, text_center_pos: tuple):
