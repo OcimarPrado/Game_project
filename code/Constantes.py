@@ -17,6 +17,7 @@ MENU_OPTION = ('S E L E C T P1',
 
 # Velocidade das entidades (parallax)
 ENTITY_SPEED = {
+    #level1
     "Level1Bg0": 0,
     "Level1Bg1": 1,
     "Level1Bg2": 2,
@@ -24,10 +25,21 @@ ENTITY_SPEED = {
     "Level1Bg4": 4,
     "Level1Bg5": 5,
     "Level1Bg6": 6,
+    #level 2
+    "Level2Bg0": 0,
+    "Level2Bg1": 1,
+    "Level2Bg2": 2,
+    "Level2Bg3": 3,
+    "Level2Bg4": 4,
+    "Level2Bg5": 5,
+    "Level2Bg6": 6,
 }
 
 # Velocidade dos players
 PLAYER_SPEED = 5
+
+#Vida do player
+HEALTH = 5
 
 # Controles do Player
 PLAYER_CONTROLS = {
@@ -45,5 +57,6 @@ MENU_CONTROLS = {
     'select': pygame.K_RETURN,
     'exit': pygame.K_ESCAPE
 }
-
+#duração de cada level do jogo
+LEVEL_TIMER = 25
 

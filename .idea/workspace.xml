@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1da4f11-d9b8-4caf-8621-48ec08a37eba" name="Changes" comment="Ajuste da Background 'parallax'.&#10;Inserção dos players 1-2 e ajuste de movimentação dos players">
+    <list default="true" id="d1da4f11-d9b8-4caf-8621-48ec08a37eba" name="Changes" comment="Inimigos atualizado na screen...">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/Background.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/Background.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/Constantes.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/Constantes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/Enemy.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/Enemy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/EntityFactory.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/EntityFactory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/Game.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/Game.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/Level.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/Level.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/Menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/Menu.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/Player.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/Player.py" afterDir="false" />
@@ -163,7 +165,15 @@
       <option name="project" value="LOCAL" />
       <updated>1756529797207</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Inimigos atualizado na screen...">
+      <option name="closed" value="true" />
+      <created>1756749132085</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1756749132085</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -183,6 +193,7 @@
     <MESSAGE value="Ajustando e conectando classes de Menu e Game" />
     <MESSAGE value="Atualização da tela de menu com fundo, música, e texto" />
     <MESSAGE value="Ajuste da Background 'parallax'.&#10;Inserção dos players 1-2 e ajuste de movimentação dos players" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajuste da Background 'parallax'.&#10;Inserção dos players 1-2 e ajuste de movimentação dos players" />
+    <MESSAGE value="Inimigos atualizado na screen..." />
+    <option name="LAST_COMMIT_MESSAGE" value="Inimigos atualizado na screen..." />
   </component>
 </project>

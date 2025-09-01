@@ -1,75 +1,30 @@
-# import pygame
-#
-# from code.Entity import Entity
-# from Constantes import PLAYER_SPEED, WIN_WIDTH, WIN_HEIGTH
-# from code.Tiro import Tiro
-#
-# class Player(Entity):
-#     def __init__(self, name: str, position: tuple):
-#         super().__init__(name, position)
-#         self.speed = PLAYER_SPEED
-#         self.tiros = []  # Lista de tiros
-#
-#     def move(self):
-#         keys = pygame.key.get_pressed()
-#
-#         # Movimento horizontal
-#         if keys[pygame.K_LEFT]:
-#             self.rect.x -= self.speed
-#         if keys[pygame.K_RIGHT]:
-#             self.rect.x += self.speed
-#
-#         # Movimento vertical
-#         if keys[pygame.K_UP]:
-#             self.rect.y -= self.speed
-#         if keys[pygame.K_DOWN]:
-#             self.rect.y += self.speed
-#
-#         # Limitar dentro da tela
-#         if self.rect.left < 0:
-#             self.rect.left = 0
-#         if self.rect.right > WIN_WIDTH:
-#             self.rect.right = WIN_WIDTH
-#         if self.rect.top < 0:
-#             self.rect.top = 0
-#         if self.rect.bottom > WIN_HEIGTH:
-#             self.rect.bottom = WIN_HEIGTH
-#
-#         # Disparo
-#         if keys[pygame.K_SPACE]:
-#             if len(self.tiros) == 0 or self.tiros[-1].rect.x - self.rect.right > 20:
-#                 self.tiros.append(Tiro((self.rect.right, self.rect.centery)))
-#
-#     def update_tiros(self, window):
-#         for tiro in self.tiros:
-#             tiro.move()
-#             tiro.draw(window)
-#
-#         # Remover tiros que saíram da tela
-#         self.tiros = [t for t in self.tiros if t.rect.x < WIN_WIDTH]
 import pygame
 import os
 from code.Tiro import Tiro
-from Constantes import PLAYER_CONTROLS  # Certifique-se de ter definido a barra de espaço como shoot
+from Constantes import PLAYER_CONTROLS, WIN_HEIGTH, WIN_WIDTH, HEALTH
 
+# Caminho da pasta onde estão as imagens do jogo
 ASSETS_PATH = os.path.join(os.path.dirname(__file__), 'assets')
 
 class Player(pygame.sprite.Sprite):
     def __init__(self, name: str, position: tuple, controls, projectile_group):
         super().__init__()
         self.name = name
-        self.image = pygame.image.load(os.path.join(ASSETS_PATH, name + ".png")).convert_alpha()
-        self.rect = self.image.get_rect(topleft=position)
-        self.speed = 5
-        self.controls = controls
-        self.projectile_group = projectile_group
+        # Carrega a imagem do player
+        self.image = pygame.image.load(os.path.join(ASSETS_PATH, f"{name}.png")).convert_alpha()
+        self.rect = self.image.get_rect(topleft=position)  # Define a posição inicial
+        self.speed = 5  # Velocidade de movimento
+        self.controls = controls  # Controles do player
+        self.projectile_group = projectile_group  # Grupo para armazenar os tiros
+        self.health = HEALTH  # Vida inicial
+        self.alive = True  # Player está vivo no início
 
-        # sprite do tiro de cada player
+        # Imagem do tiro do player
         self.shot_image = os.path.join(ASSETS_PATH, f"{name}Shot.png")
 
-    def update(self, events):  # recebe a lista de eventos do Level
+    def update(self, events):
         keys = pygame.key.get_pressed()
-        # movimento contínuo
+        # Movimento contínuo baseado nas teclas pressionadas
         if keys[self.controls['up']]:
             self.rect.y -= self.speed
         if keys[self.controls['down']]:
@@ -79,13 +34,41 @@ class Player(pygame.sprite.Sprite):
         if keys[self.controls['right']]:
             self.rect.x += self.speed
 
-        # tiro apenas no KEYDOWN (barra de espaço)
+        # Impede que o player saia da tela
+        self.rect.top = max(self.rect.top, 0)
+        self.rect.bottom = min(self.rect.bottom, WIN_HEIGTH)
+        self.rect.left = max(self.rect.left, 0)
+        self.rect.right = min(self.rect.right, WIN_WIDTH)
+
+        # Verifica se apertou a tecla de atirar
         for event in events:
-            if event.type == pygame.KEYDOWN:
-                if event.key == self.controls['shoot']:
-                    self.shoot()
+            if event.type == pygame.KEYDOWN and event.key == self.controls['shoot']:
+                self.shoot()  # Cria um tiro
 
     def shoot(self):
+        # Cria o tiro e adiciona ao grupo de projéteis
         tiro = Tiro(self.rect.centerx, self.rect.centery, self.shot_image, 7)
         self.projectile_group.add(tiro)
 
+    def hit(self, damage=1):
+        """Reduz a vida do player quando ele é atingido"""
+        self.health -= damage
+        if self.health <= 0:
+            self.health = 0
+            self.alive = False
+            self.kill()  # Remove o player do jogo
+
+    def draw_health_bar(self, surface):
+        """Desenha a barra de vida acima do player"""
+        bar_width = 50
+        bar_height = 6
+        fill = int((self.health / HEALTH) * bar_width)  # Vida proporcional
+
+        # Posição da barra de vida
+        x = self.rect.centerx - bar_width // 2
+        y = self.rect.top - 10
+
+        # Fundo vermelho representa a vida que foi perdida
+        pygame.draw.rect(surface, (255, 0, 0), (x, y, bar_width, bar_height))
+        # Parte verde mostra a vida atual
+        pygame.draw.rect(surface, (0, 255, 0), (x, y, fill, bar_height))
